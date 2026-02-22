@@ -156,6 +156,6 @@ footer h3 {
 @media (max-width: 768px) {
     .bunny {
         width: 80px;
-        opacity: 0.06;
+        opacity: 0.10;
     }
 }
