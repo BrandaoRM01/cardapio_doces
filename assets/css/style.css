@@ -1,48 +1,69 @@
 body {
-    background-color: #fff5f8;
+    background-color: #4b1e13;
+    color: #ffffff;
     font-family: 'Segoe UI', sans-serif;
 }
 
-header {
-    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+.hero {
+    padding: 60px 20px 30px;
+    text-align: center;
 }
 
-.categoria-titulo {
-    margin: 40px 0 20px;
+.hero h1 {
+    color: #ff8db3;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+}
+
+.hero h2 {
+    font-size: 3rem;
     font-weight: bold;
-    border-bottom: 2px solid #ff7eb3;
-    padding-bottom: 5px;
+}
+
+.titulo-categoria {
+    color: #ff8db3;
+    margin: 40px 0 20px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .doce-card {
+    background-color: #5a2417;
+    padding: 20px;
     border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.2s ease;
 }
 
 .doce-card:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
-.card img {
-    height: 250px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+.doce-card h4 {
+    color: #ff8db3;
+    font-weight: bold;
 }
 
 .descricao {
     font-size: 0.9rem;
-    color: #555;
-    min-height: 60px;
+    opacity: 0.9;
 }
 
-.peso {
-    font-size: 0.85rem;
-    color: #777;
+.doce-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
 }
 
-.preco {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #e91e63;
+.doce-card li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px;
+    background-color: #3b170f;
 }
