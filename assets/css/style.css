@@ -1,8 +1,48 @@
 body {
     background-color: #fff5f8;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+header {
+    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+}
+
+.categoria-titulo {
+    margin: 40px 0 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #ff7eb3;
+    padding-bottom: 5px;
+}
+
+.doce-card {
+    border-radius: 15px;
+    transition: transform 0.2s ease;
+}
+
+.doce-card:hover {
+    transform: scale(1.03);
 }
 
 .card img {
     height: 250px;
     object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.descricao {
+    font-size: 0.9rem;
+    color: #555;
+    min-height: 60px;
+}
+
+.peso {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.preco {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e91e63;
 }
