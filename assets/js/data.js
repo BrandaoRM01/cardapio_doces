@@ -45,7 +45,7 @@ export const doces = [
         nome: "Ovo de Colher de Ferrero Rocher",
         categoria: "ovos-colher",
         descricao: "Recheio inspirado no sabor Ferrero Rocher.",
-        pesos: [{ peso: "350g", preco: 70 }]
+        pesos: [{ peso: "350g", preco: 80 }]
     },
     {
         nome: "Kit com 3 Mini Ovos de Colher",
