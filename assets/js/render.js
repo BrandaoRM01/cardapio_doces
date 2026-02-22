@@ -30,6 +30,13 @@ export function renderCardapio() {
     const row = document.createElement("div");
     row.classList.add("row", "g-4");
 
+    // **Ordenar doces pelo menor preço**
+    categorias[categoria].sort((a, b) => {
+      const menorPrecoA = Math.min(...a.pesos.map(p => p.preco));
+      const menorPrecoB = Math.min(...b.pesos.map(p => p.preco));
+      return menorPrecoA - menorPrecoB;
+    });
+
     // Criar cards
     categorias[categoria].forEach((doce) => {
       const col = document.createElement("div");
@@ -39,10 +46,10 @@ export function renderCardapio() {
       card.classList.add("doce-card", "h-100");
 
       card.innerHTML = `
-        <h4>${doce.nome}</h4>
-        <p class="descricao">${doce.descricao}</p>
-        <ul>
-          ${doce.pesos
+      <h4>${doce.nome}</h4>
+      <p class="descricao">${doce.descricao}</p>
+      <ul>
+        ${doce.pesos
           .map(
             (p) =>
               `<li class="d-flex justify-content-between">
@@ -51,8 +58,8 @@ export function renderCardapio() {
                  </li>`
           )
           .join("")}
-        </ul>
-      `;
+      </ul>
+    `;
 
       col.appendChild(card);
       row.appendChild(col);
