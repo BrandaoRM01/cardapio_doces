@@ -103,21 +103,20 @@ footer h3 {
 
 .whatsapp-btn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    transition: 0.3s;
-    z-index: 1000;
+    bottom: 15px;
+    right: 15px;
+    width: 60px !important;
+    height: 60px !important;
+    background-color: #25D366 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 28px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    z-index: 99999 !important;
 }
 
 .whatsapp-btn:hover {
