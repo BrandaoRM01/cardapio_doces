@@ -55,6 +55,10 @@ body {
     position: relative;
 }
 
+.menu-box .titulo-categoria:first-of-type {
+    margin-top: 10px;
+}
+
 .titulo-categoria::before,
 .titulo-categoria::after {
     content: "";
@@ -138,10 +142,6 @@ footer h3 {
     .titulo-categoria::before,
     .titulo-categoria::after {
         width: 30px;
-    }
-
-    .whatsapp-text {
-        display: none;
     }
 
     .bunny {
