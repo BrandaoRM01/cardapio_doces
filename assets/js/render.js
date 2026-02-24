@@ -4,7 +4,9 @@ export function renderCardapio() {
   const container = document.getElementById("cardapio");
   container.innerHTML = "";
 
-  // Agrupar por categoria
+  const menuBox = document.createElement("div");
+  menuBox.classList.add("menu-box");
+
   const categorias = {};
 
   doces.forEach((doce) => {
@@ -14,63 +16,48 @@ export function renderCardapio() {
     categorias[doce.categoria].push(doce);
   });
 
-  // Criar seção para cada categoria
   Object.keys(categorias).forEach((categoria) => {
-    const secao = document.createElement("section");
-    secao.classList.add("mb-5");
 
-    // Título da categoria
     const titulo = document.createElement("h2");
     titulo.classList.add("titulo-categoria");
     titulo.textContent = formatarCategoria(categoria);
+    menuBox.appendChild(titulo);
 
-    secao.appendChild(titulo);
+    const descricao = document.createElement("p");
+    descricao.classList.add("descricao-geral");
 
-    // Criar grid Bootstrap
-    const row = document.createElement("div");
-    row.classList.add("row", "g-4");
+    if (categoria === "ovos-colher") {
+      descricao.textContent = "Ovos artesanais recheados • Aprox. 350g";
+    } else if (categoria === "kit-mini-ovos") {
+      descricao.textContent = "Mini ovos de colher • Escolha os sabores";
+    }
 
-    // **Ordenar doces pelo menor preço**
+    menuBox.appendChild(descricao);
+
     categorias[categoria].sort((a, b) => {
-      const menorPrecoA = Math.min(...a.pesos.map(p => p.preco));
-      const menorPrecoB = Math.min(...b.pesos.map(p => p.preco));
-      return menorPrecoA - menorPrecoB;
+      return a.pesos[0].preco - b.pesos[0].preco;
     });
 
-    // Criar cards
     categorias[categoria].forEach((doce) => {
-      const col = document.createElement("div");
-      col.classList.add("col-12", "col-md-6");
 
-      const card = document.createElement("div");
-      card.classList.add("doce-card", "h-100");
+      const item = document.createElement("div");
+      item.classList.add("item-menu");
 
-      card.innerHTML = `
-      <h4>${doce.nome}</h4>
-      <p class="descricao">${doce.descricao}</p>
-      <ul>
-        ${doce.pesos
-          .map(
-            (p) =>
-              `<li class="d-flex justify-content-between">
-                   <span>${p.peso}</span>
-                   <strong>R$ ${p.preco.toFixed(2)}</strong>
-                 </li>`
-          )
-          .join("")}
-      </ul>
-    `;
+      item.innerHTML = `
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="nome-item">${doce.nome}</span>
+          <span class="preco">R$ ${doce.pesos[0].preco.toFixed(2)}</span>
+        </div>
+      `;
 
-      col.appendChild(card);
-      row.appendChild(col);
+      menuBox.appendChild(item);
     });
 
-    secao.appendChild(row);
-    container.appendChild(secao);
   });
+
+  container.appendChild(menuBox);
 }
 
-// Formatar nome da categoria
 function formatarCategoria(categoria) {
   if (categoria === "ovos-colher") return "OVOS DE COLHER";
   if (categoria === "kit-mini-ovos") return "KIT MINI OVOS";

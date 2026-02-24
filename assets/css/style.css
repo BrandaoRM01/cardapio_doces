@@ -2,87 +2,102 @@ body {
     background: linear-gradient(180deg, #4b1e13 0%, #3b170f 100%);
     color: #fff;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
-/* HERO */
-
 .hero {
-    padding: 80px 0 60px;
+    padding: 100px 0 70px;
     background: radial-gradient(circle at top, #5a2417 0%, #4b1e13 70%);
 }
 
 .hero h1 {
     color: #ff9cc3;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .hero h2 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
 }
 
-/* CATEGORIA */
+.hero-btn {
+    background: #ff9cc3;
+    border-radius: 40px;
+    padding: 12px 35px;
+    font-weight: 600;
+    color: #4b1e13;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #ffc2da;
+    transform: scale(1.05);
+}
+
+.menu-box {
+    max-width: 650px;
+    margin: auto;
+    background: linear-gradient(180deg, #5a2417, #4b1e13);
+    padding: 50px 35px;
+    border-radius: 30px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
 
 .titulo-categoria {
-    color: #ff9cc3;
     text-align: center;
+    color: #ff9cc3;
     font-weight: 600;
-    margin: 50px 0 30px;
+    margin: 50px 0 10px;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
     position: relative;
 }
 
+.titulo-categoria::before,
 .titulo-categoria::after {
     content: "";
-    width: 60px;
-    height: 3px;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 2px;
     background: #ff9cc3;
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 10px;
 }
 
-/* CARD */
-
-.doce-card {
-    background-color: #5a2417;
-    padding: 20px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s ease;
+.titulo-categoria::before {
+    left: 15%;
 }
 
-.doce-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+.titulo-categoria::after {
+    right: 15%;
 }
 
-.doce-card h4 {
+.descricao-geral {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+.item-menu {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.95rem;
+}
+
+.item-menu:last-child {
+    border-bottom: none;
+}
+
+.nome-item {
+    font-weight: 400;
+}
+
+.preco {
     color: #ff9cc3;
     font-weight: 600;
-    margin-bottom: 8px;
 }
-
-.descricao {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    margin-bottom: 12px;
-}
-
-.doce-card ul {
-    list-style: none;
-    padding: 0;
-}
-
-.doce-card li {
-    padding: 8px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-weight: 500;
-}
-
-/* FOOTER */
 
 footer {
     background: #2d110c;
@@ -92,51 +107,10 @@ footer h3 {
     color: #ff9cc3;
 }
 
-/* BOTÃO WHATSAPP */
-
-.whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    transition: 0.3s;
-    z-index: 1000;
-}
-
-.whatsapp-btn:hover {
-    transform: scale(1.1);
-}
-
-/* RESPONSIVO */
-
-@media (min-width: 768px) {
-
-    .hero h2 {
-        font-size: 4.5rem;
-    }
-
-    .doce-card {
-        padding: 25px;
-    }
-}
-
-/* COELHINHOS DECORATIVOS */
-
 .bunny {
     position: fixed;
     width: 120px;
-    opacity: 0.14;
-    /* BEM SUAVE */
+    opacity: 0.12;
     z-index: 0;
     pointer-events: none;
 }
@@ -151,11 +125,27 @@ footer h3 {
     right: 0;
 }
 
-/* Responsivo */
-
 @media (max-width: 768px) {
+
+    .hero h2 {
+        font-size: 3rem;
+    }
+
+    .menu-box {
+        padding: 35px 20px;
+    }
+
+    .titulo-categoria::before,
+    .titulo-categoria::after {
+        width: 30px;
+    }
+
+    .whatsapp-text {
+        display: none;
+    }
+
     .bunny {
         width: 80px;
-        opacity: 0.10;
+        opacity: 0.08;
     }
 }
