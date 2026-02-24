@@ -46,35 +46,25 @@ body {
 }
 
 .titulo-categoria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
     text-align: center;
     color: #ff9cc3;
     font-weight: 600;
-    margin: 50px 0 10px;
+    margin: 50px 0 15px;
     font-size: 1.4rem;
     letter-spacing: 1px;
-    position: relative;
-}
-
-.menu-box .titulo-categoria:first-of-type {
-    margin-top: 10px;
 }
 
 .titulo-categoria::before,
 .titulo-categoria::after {
     content: "";
-    position: absolute;
-    top: 50%;
-    width: 50px;
+    flex: 1;
     height: 2px;
     background: #ff9cc3;
-}
-
-.titulo-categoria::before {
-    left: 15%;
-}
-
-.titulo-categoria::after {
-    right: 15%;
+    max-width: 80px;
 }
 
 .descricao-geral {
@@ -111,6 +101,29 @@ footer h3 {
     color: #ff9cc3;
 }
 
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
 .bunny {
     position: fixed;
     width: 120px;
@@ -129,6 +142,18 @@ footer h3 {
     right: 0;
 }
 
+@media (max-width: 992px) {
+    .titulo-categoria {
+        font-size: 1.2rem;
+        gap: 12px;
+    }
+
+    .titulo-categoria::before,
+    .titulo-categoria::after {
+        max-width: 60px;
+    }
+}
+
 @media (max-width: 768px) {
 
     .hero h2 {
@@ -139,13 +164,33 @@ footer h3 {
         padding: 35px 20px;
     }
 
+    .titulo-categoria {
+        font-size: 1.05rem;
+        gap: 10px;
+        margin: 35px 0 15px;
+    }
+
     .titulo-categoria::before,
     .titulo-categoria::after {
-        width: 30px;
+        max-width: 45px;
+        height: 1.5px;
     }
 
     .bunny {
         width: 80px;
         opacity: 0.08;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-categoria {
+        font-size: 0.95rem;
+        gap: 8px;
+    }
+
+    .titulo-categoria::before,
+    .titulo-categoria::after {
+        max-width: 30px;
+        height: 1px;
     }
 }

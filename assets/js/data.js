@@ -22,7 +22,7 @@ export const doces = [
     {
         nome: "Ovo de Ninho com Morango",
         categoria: "ovos-colher",
-        pesos: [{ peso: "350g", preco: 70 }]
+        pesos: [{ peso: "350g", preco: 75 }]
     },
     {
         nome: "Ovo de Ninho com Nutella",
