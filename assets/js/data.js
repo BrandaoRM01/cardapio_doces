@@ -42,11 +42,11 @@ export const doces = [
     {
         nome: "Kit com 3 Mini Ovos de Colher",
         categoria: "kit-mini-ovos",
-        pesos: [{ peso: "3x 100g", preco: 35 }]
+        pesos: [{ peso: "3x 100g", preco: 40 }]
     },
     {
         nome: "Kit com 6 Mini Ovos de Colher",
         categoria: "kit-mini-ovos",
-        pesos: [{ peso: "6x 100g", preco: 65 }]
+        pesos: [{ peso: "6x 100g", preco: 70 }]
     }
 ];
